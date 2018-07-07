@@ -1,0 +1,25 @@
+section {
+	border: 1px solid #333;
+	border-radius: 1rem;
+	height: 400px;
+	margin: 1rem;
+	position: relative;
+}
+
+p, h3 {
+	padding-left: 1rem;
+}
+
+.qnt {
+	position: absolute;
+	bottom: 1rem;
+}
+
+.price{
+	position: absolute;
+	bottom: 3rem;
+}
+
+img {
+	padding: 1rem;
+}

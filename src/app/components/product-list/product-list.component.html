@@ -1,0 +1,8 @@
+<main>
+	<app-product
+		*ngFor="let product of products; index as i"
+		[product]="product"
+		[index]="i"
+		(productMessenger)="counter($event)"
+	></app-product>
+</main>
