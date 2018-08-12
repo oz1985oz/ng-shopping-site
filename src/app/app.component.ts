@@ -21,9 +21,7 @@ export class AppComponent {
 		{id: 6, name: 'Oneplus 5t', image: 'assets/images/oneplus.png', price: 1600, quantity: 0}
 	]
 
-
-
-	cart (index: number):number {
+	addToCart (index: number):number {
 		if (!this.cartList.includes(this.productList[index])) {
 			this.cartList.push(this.productList[index]);
 			console.log(this.cartList);
@@ -35,6 +33,17 @@ export class AppComponent {
 	amount (i: number): number {
 		this.sum += this.productList[i].price;
 		return this.sum;
+	}
+
+	minus (qnt: number, index: number): void {
+		qnt--;
+		this.sum -= this.cartList[index].price;
+		this.count--;
+		let i = this.productList.indexOf(this.cartList[index]);
+		this.productList[i].quantity = qnt;
+		if (qnt < 1) {
+			this.cartList.splice(index, 1);
+		}
 	}
 
 	showAndHide (): void {

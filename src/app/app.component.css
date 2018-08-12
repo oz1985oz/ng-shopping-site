@@ -30,7 +30,7 @@ header h1 {
 	animation: slow 1s;
 }
 
-.close {
+.close, .minus {
 	cursor: pointer;
 }
 

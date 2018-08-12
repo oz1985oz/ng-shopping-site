@@ -13,10 +13,11 @@
         <th>Quantity</th>
         <th>Total Price</th>
       </tr>
-      <tr *ngFor = "let cartProduct of cartList">
+      <tr *ngFor = "let cartProduct of cartList; index as i">
         <td class="fontTd">{{cartProduct.name}}</td>
         <td class="fontTd">{{cartProduct.quantity}}</td>
-      <td class="fontTd">{{cartProduct.quantity * cartProduct.price}}</td>
+        <td class="fontTd">{{cartProduct.quantity * cartProduct.price}}</td>
+        <td><img class="minus" src="assets/images/minus.png" width="15px" (click)="minus(cartProduct.quantity, i)"></td>
       </tr>
       <tr>
         <td>Total Amount</td>
@@ -29,5 +30,5 @@
 
 <app-product-list
     [products]="productList"
-    (productListMessenger)="cart($event)"
+    (productListMessenger)="addToCart($event)"
 ></app-product-list>
